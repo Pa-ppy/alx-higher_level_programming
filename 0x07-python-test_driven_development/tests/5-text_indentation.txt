@@ -1,0 +1,27 @@
+>>> text_indentation("Hello. How are you? I'm fine.")
+Hello.
+
+How are you?
+
+I'm fine.
+>>> text_indentation("Hello")
+Hello
+>>> text_indentation("")
+>>> text_indentation("Hello... How are you?")
+Hello...
+
+How are you?
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> text_indentation("Hello: World.")
+Hello:
+
+World.
+>>> text_indentation(" Hello. How? Are you.")
+Hello.
+
+How?
+
+Are you.
