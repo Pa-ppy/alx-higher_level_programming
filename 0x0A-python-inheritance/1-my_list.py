@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 class MyList(list):
     """
-    Inherits from list and provides a method to print sorted list
+    Inherits list and provides a method to print sorted list
     """
 
     def print_sorted(self):
