@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module defines a function lookup that returns the list of available attributes
+This module defines a function lookup that returns the list
+of available attributes
 """
 def lookup(obj):
     """
