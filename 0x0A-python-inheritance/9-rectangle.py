@@ -5,7 +5,25 @@ It includes methods for calculating area and representing the rectangle as a str
 """
 
 
-from 7-base_geometry import BaseGeometry
+class BaseGeometry:
+    """Base class for geometry objects."""
+    
+    def integer_validator(self, name, value):
+        """
+        Validates that the given value is a positive integer.
+
+        Args:
+            name (str): The name of the parameter.
+            value (int): The value to validate.
+
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than or equal to 0.
+        """
+        if type(value) is not int:
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be greater than 0")
 
 
 class Rectangle(BaseGeometry):
