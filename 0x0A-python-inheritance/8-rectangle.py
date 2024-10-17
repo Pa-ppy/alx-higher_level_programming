@@ -28,7 +28,7 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """
-    A class used to represent a Rectangle, which inherits from BaseGeometry.
+    A class used to represent a Rectangle, which inherits through BaseGeometry.
     
     Attributes:
         width (int): The width of the rectangle.
