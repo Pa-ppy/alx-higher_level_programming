@@ -1,20 +1,27 @@
 #!/usr/bin/python3
 """
-This module defines a class 'Square' that inherits through 'Rectangle'.
-The class validates the size and includes a method for calculating the area.
+This module defines a Square class that inherits from Rectangle.
 """
 
 
 class BaseGeometry:
-    """Base class for geometry objects."""
-    
+    """
+    BaseGeometry class with validation methods.
+    """
+
+    def area(self):
+        """
+        Raises an Exception for area not implemented.
+        """
+        raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
         """
-        Validates that the given value is a positive integer.
+        Validates the value as a positive integer.
 
         Args:
-            name (str): The name of the parameter.
-            value (int): The value to validate.
+            name (str): The name of the variable.
+            value (int): The value to be validated.
 
         Raises:
             TypeError: If value is not an integer.
@@ -26,33 +33,47 @@ class BaseGeometry:
             raise ValueError(f"{name} must be greater than 0")
 
 
+class Rectangle(BaseGeometry):
+    """
+    Rectangle class that defines a rectangle shape.
+    """
+
+    def __init__(self, width, height):
+        """
+        Initializes a new Rectangle instance.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+        """
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
+
+
 class Square(Rectangle):
     """
-    A class used to represent a Square, which inherits through Rectangle.
-    
-    Attributes:
-        size (int): The size of the square.
-
-    Methods:
-        __init__(self, size): Initializes the square with size.
-        area(self): Calculates the area of the square.
+    Square class that represents a square shape.
+    Inherits from Rectangle.
     """
 
     def __init__(self, size):
         """
-        Initializes the Square instance with size.
+        Initializes a new Square instance.
 
         Args:
-            size (int): The size of the square, validated by integer_validator.
-
-        Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than or equal to 0.
+            size (int): The size of the square (both width and height).
         """
         self.integer_validator("size", size)
-        super().__init__(size, size)
         self.__size = size
+        super().__init__(size, size)
 
     def area(self):
-        """Returns the area of the square."""
+        """
+        Calculates the area of the square.
+
+        Returns:
+            int: The area of the square.
+        """
         return self.__size ** 2
