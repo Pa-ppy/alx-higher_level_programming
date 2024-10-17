@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines a class 'Rectangle' that inherits from 'BaseGeometry'.
+This module defines a class 'Rectangle' that inherits through 'BaseGeometry'.
 It includes methods for calculating area and representing the rectangle as a string.
 """
 
@@ -28,7 +28,7 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """
-    A class used to represent a Rectangle, which inherits from BaseGeometry.
+    A class used to represent a Rectangle, which inherits through BaseGeometry.
     
     Attributes:
         width (int): The width of the rectangle.
