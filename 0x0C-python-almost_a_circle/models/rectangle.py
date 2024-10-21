@@ -92,17 +92,28 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
-        Assigns arguments to attributes based on their order.
+        Assign attributes using *args (no-keyworded) or **kwargs (keyworded).
         """
-        if len(args) > 0:
-            self.id = args[0]
-        if len(args) > 1:
-            self.width = args[1]
-        if len(args) > 2:
-            self.height = args[2]
-        if len(args) > 3:
-            self.x = args[3]
-        if len(args) > 4:
-            self.y = args[4]
+        if args:
+            attr_list = ['id', 'width', 'height', 'x', 'y']
+            for i, arg in enumerate(args):
+                if i < len(attr_list):
+                    setattr(self, attr_list[i], arg)
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of a Rectangle.
+        """
+        return {
+                'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y
+                }
