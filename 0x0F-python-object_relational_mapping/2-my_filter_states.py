@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Script that displays values in states table matching the argument
+"""
 import MySQLdb
 import sys
 
