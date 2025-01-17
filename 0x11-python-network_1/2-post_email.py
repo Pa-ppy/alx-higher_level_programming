@@ -14,5 +14,6 @@ def send_email(url, email):
         body = response.read().decode('utf-8')
         print(f"Your email is: {body}")
 
+
 if __name__ == "__main__":
     send_email(sys.argv[1], sys.argv[2])
