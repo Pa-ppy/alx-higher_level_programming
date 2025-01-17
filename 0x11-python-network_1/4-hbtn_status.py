@@ -12,5 +12,6 @@ def fetch_status():
     print(f"\t- content: {response.text}")
     print(f"\t- utf8 content: {response.text}")
 
+
 if __name__ == "__main__":
     fetch_status()
