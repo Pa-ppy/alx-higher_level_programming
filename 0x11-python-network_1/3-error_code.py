@@ -13,5 +13,6 @@ def fetch_url(url):
     except urllib.error.HTTPError as e:
         print(f"Error code: {e.code}")
 
+
 if __name__ == "__main__":
     fetch_url(sys.argv[1])
