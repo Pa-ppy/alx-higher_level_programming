@@ -9,5 +9,6 @@ def fetch_request_id(url):
     response = requests.get(url)
     print(response.headers.get('X-Request-Id'))
 
+
 if __name__ == "__main__":
     fetch_request_id(sys.argv[1])
