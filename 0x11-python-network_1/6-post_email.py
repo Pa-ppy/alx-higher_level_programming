@@ -9,5 +9,6 @@ def send_email(url, email):
     response = requests.post(url, data={'email': email})
     print(f"Your email is: {response.text}")
 
+
 if __name__ == "__main__":
     send_email(sys.argv[1], sys.argv[2])
