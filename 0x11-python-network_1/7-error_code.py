@@ -12,5 +12,6 @@ def fetch_url(url):
     else:
         print(response.text)
 
+
 if __name__ == "__main__":
     fetch_url(sys.argv[1])
