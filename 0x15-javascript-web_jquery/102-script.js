@@ -1,3 +1,4 @@
+/* global $ */
 $(document).ready(function () {
   $('#btn_translate').click(function () {
     const lang = $('#language_code').val();
